@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Happy Birthday 🎉</title>
+  <title>Happy Birthday 💖🎉</title>
 
   <style>
     body {
       margin: 0;
-      text-align: center;
       font-family: Arial;
-      background: linear-gradient(45deg, pink, violet, lightblue);
+      text-align: center;
+      background: linear-gradient(45deg, pink, purple, lightblue);
       background-size: 300% 300%;
       animation: bg 6s infinite;
       color: white;
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
     @keyframes bg {
@@ -22,49 +22,100 @@
     }
 
     h1 {
-      margin-top: 80px;
+      margin-top: 60px;
       font-size: 40px;
       animation: bounce 1.5s infinite;
     }
 
     @keyframes bounce {
-      0%, 100% {transform: translateY(0);}
-      50% {transform: translateY(-20px);}
+      0%,100% {transform: translateY(0);}
+      50% {transform: translateY(-15px);}
     }
 
-    p {
-      font-size: 20px;
+    .card {
+      background: rgba(0,0,0,0.3);
+      padding: 20px;
+      margin: 20px;
+      border-radius: 15px;
+      display: inline-block;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    .loveBtn { background: hotpink; color: white; }
+    .funBtn { background: yellow; color: black; }
+
+    img {
+      width: 200px;
+      border-radius: 20px;
+      margin-top: 10px;
     }
 
     .balloon {
-      width: 40px;
-      height: 60px;
-      background: red;
-      border-radius: 50%;
       position: absolute;
       bottom: -100px;
+      font-size: 30px;
       animation: float 8s infinite;
     }
 
     @keyframes float {
-      0% {transform: translateY(0);}
-      100% {transform: translateY(-120vh);}
+      to { transform: translateY(-120vh); }
     }
   </style>
 </head>
 
 <body>
 
-  <h1>🎉 Happy Birthday! 🎂</h1>
-  <p>Wishing you joy, love & happiness 💖</p>
+<h1>🎉 Happy Birthday! 💖</h1>
 
-  <img src="birthday.jpg" width="200" style="border-radius:20px; margin-top:20px;">
+<div class="card">
+  <p>💖 You are special and amazing!</p>
+  <p>😂 But also… don’t eat too much cake!</p>
+</div>
 
-  <!-- Balloons -->
-  <div class="balloon" style="left:10%; background:red;"></div>
-  <div class="balloon" style="left:30%; background:blue; animation-delay:2s;"></div>
-  <div class="balloon" style="left:60%; background:yellow; animation-delay:4s;"></div>
-  <div class="balloon" style="left:80%; background:green; animation-delay:1s;"></div>
+<img src="birthday.jpg">
+
+<br>
+
+<button class="loveBtn" onclick="alert('💖 You are truly special! 💖')">
+Romantic Message
+</button>
+
+<button class="funBtn" onclick="alert('😂 Stop getting older… stay young! 🎂')">
+Funny Message
+</button>
+
+<audio autoplay loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Balloons -->
+<div class="balloon" style="left:10%">🎈</div>
+<div class="balloon" style="left:30%; animation-delay:2s;">🎈</div>
+<div class="balloon" style="left:60%; animation-delay:4s;">🎈</div>
+<div class="balloon" style="left:80%; animation-delay:1s;">🎈</div>
+
+<!-- Confetti -->
+<script>
+setInterval(() => {
+  let e = document.createElement("div");
+  e.innerHTML = "🎉";
+  e.style.position = "absolute";
+  e.style.left = Math.random()*100 + "vw";
+  e.style.top = "-10px";
+  e.style.fontSize = "20px";
+  e.style.animation = "float 4s linear";
+  document.body.appendChild(e);
+  setTimeout(()=>e.remove(),4000);
+}, 300);
+</script>
 
 </body>
 </html>
