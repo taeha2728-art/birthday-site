@@ -25,6 +25,30 @@
 </head>
 
 <body>
+  <div style="text-align:center; margin-top:30px;">
+
+<button onclick="startSurprise()" style="
+  width: 80%;
+  max-width: 300px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  background: hotpink;
+  color: white;
+  border: none;
+">
+💌 Tap for Surprise 💖🎵
+</button>
+
+<p id="loveMsg" style="display:none; font-size:18px; margin-top:15px;">
+💖 You are special 💖
+</p>
+
+<audio id="bgmusic">
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+  </div>
 
 <h1>🎁 SURPRISE 🎉</h1>
 
@@ -77,5 +101,15 @@ startEffects();
   }
 }
 </style>
+<script>
+function startSurprise() {
+  // 💖 show message
+  document.getElementById("loveMsg").style.display = "block";
+
+  // 🎵 play music
+  let music = document.getElementById("bgmusic");
+  music.play();
+}
+</script>
 </body>
 </html>
