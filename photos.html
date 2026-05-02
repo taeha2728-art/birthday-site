@@ -31,6 +31,9 @@
 </head>
 
 <body>
+  <h2>💌 A Special Message For You</h2>
+
+<p id="typing" style="font-size:18px; color:#ff4d6d;"></p>
 
 <h1>📸 Memories</h1>
 
@@ -85,5 +88,19 @@ startEffects();
   }
 }
 </style>
+  <script>
+let text = "💖 You are truly special... I’m lucky to know you... Happy Birthday! 🎂💖";
+let i = 0;
+
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 80); // speed (lower = faster)
+  }
+}
+
+typeWriter();
+  </script>
 </body>
 </html>
