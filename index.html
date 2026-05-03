@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+<head>
+
 <title>Birthday 🎂</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body {
-  margin:0;
-  min-height:100vh;
+  margin: 0;
+  min-height: 100vh;
   font-family: Arial;
-  text-align:center;
-  color:white;
-  background: linear-gradient(45deg, purple, lightblue);
-  background-size:300% 300%;
-  animation:bg 6s infinite;
+  text-align: center;
+  color: white;
+
+  background-image: url("bg.jpg"); /* your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+/* optional animation (only if using gradient instead) */
 @keyframes bg {
-  0%{background-position:0%;}
-  50%{background-position:100%;}
-  100%{background-position:0%;}
+  0% {background-position: 0%;}
+  50% {background-position: 100%;}
+  100% {background-position: 0%;}
 }
+
 button {
-  margin-top:20px;
-  padding:12px;
-  width:80%;
-  max-width:300px;
-  border-radius:10px;
-  border:none;
+  margin-top: 20px;
+  padding: 12px;
+  width: 80%;
+  max-width: 300px;
+  border-radius: 10px;
+  border: none;
 }
 </style>
+
+</head>
 </head>
 
 <body>
