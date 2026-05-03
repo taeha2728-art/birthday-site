@@ -42,7 +42,12 @@ button {
 </head>
 
 <body>
-
+<button onclick="startSite()" id="enterBtn">
+  Enter 🎉
+</button>
+<audio id="bgmusic" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
 <h1>Happyy Birthdayy My Babyyy🌺</h1>
 <p>Are You Happy?</p>
 
@@ -64,6 +69,11 @@ setTimeout(()=>e.remove(),4000);
 <style>
 @keyframes fall{to{transform:translateY(100vh);}}
 </style>
-
+<script>
+function startSite() {
+  document.getElementById("bgmusic").play();
+  document.getElementById("enterBtn").style.display = "none";
+}
+</script>
 </body>
 </html>
