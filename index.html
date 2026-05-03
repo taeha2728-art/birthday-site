@@ -1,84 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-  </style>
-  <title>Birthday Story 🎂</title>
+<title>Birthday 🎂</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      text-align: center;
-      background: pink;
-      padding: 20px;
-    }
-
-    h1 { font-size: 28px; }
-
-    button {
-      width: 80%;
-      max-width: 300px;
-      padding: 12px;
-      font-size: 16px;
-      border: none;
-      border-radius: 10px;
-    }
-  </style>
+<style>
+body {
+  margin:0;
+  min-height:100vh;
+  font-family: Arial;
+  text-align:center;
+  color:white;
+  background: linear-gradient(45deg, purple, lightblue);
+  background-size:300% 300%;
+  animation:bg 6s infinite;
+}
+@keyframes bg {
+  0%{background-position:0%;}
+  50%{background-position:100%;}
+  100%{background-position:0%;}
+}
+button {
+  margin-top:20px;
+  padding:12px;
+  width:80%;
+  max-width:300px;
+  border-radius:10px;
+  border:none;
+}
+</style>
 </head>
 
 <body>
 
-<h1>🎉 Welcome to Birthday Story</h1>
-<p>Tap below to start 💖</p>
+<h1>🎉 Welcome 💖</h1>
+<p>Tap to start story 📖</p>
 
-<a href="story.html">
-  <button>Start 📖</button>
-</a>
+<button onclick="location.href='story.html'">Start 📖</button>
+
 <script>
-function startEffects() {
-
-  // 🎊 Confetti
-  setInterval(() => {
-    let c = document.createElement("div");
-    c.innerHTML = ["🎉","🎊","✨"][Math.floor(Math.random()*3)];
-    c.style.position = "fixed";
-    c.style.left = Math.random() * 100 + "vw";
-    c.style.top = "-10px";
-    c.style.fontSize = "20px";
-    c.style.zIndex = "9999";
-    c.style.animation = "fall 4s linear";
-    document.body.appendChild(c);
-    setTimeout(() => c.remove(), 4000);
-  }, 200);
-
-  // 💖 Heart rain
-  setInterval(() => {
-    let h = document.createElement("div");
-    h.innerHTML = "💖";
-    h.style.position = "fixed";
-    h.style.left = Math.random() * 100 + "vw";
-    h.style.top = "-10px";
-    h.style.fontSize = "18px";
-    h.style.zIndex = "9999";
-    h.style.animation = "fall 5s linear";
-    document.body.appendChild(h);
-    setTimeout(() => h.remove(), 5000);
-  }, 250);
-
-}
-
-startEffects();
+setInterval(()=>{
+let e=document.createElement("div");
+e.innerHTML=["💖","🎉","✨"][Math.floor(Math.random()*3)];
+e.style.position="fixed";
+e.style.left=Math.random()*100+"vw";
+e.style.top="-10px";
+e.style.animation="fall 4s linear";
+document.body.appendChild(e);
+setTimeout(()=>e.remove(),4000);
+},200);
 </script>
 
 <style>
-@keyframes fall {
-  to {
-    transform: translateY(100vh);
-  }
-}
+@keyframes fall{to{transform:translateY(100vh);}}
 </style>
+
 </body>
 </html>
